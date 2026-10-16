@@ -1,0 +1,13 @@
+// Copy this object into the const stories = [ ... ] array in index.html.
+// Add a comma after the preceding article object. Give every article a unique id.
+{
+  id: 7,
+  title: "My New Article",
+  author: "Your Name",
+  category: "Personal Essays",
+  date: "October 16, 2026",
+  excerpt: "A short introduction to your article.",
+  content: `Your article text goes here.
+
+Use a blank line between paragraphs.`
+},

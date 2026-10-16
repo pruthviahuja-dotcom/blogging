@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The Writing Room — a thoughtful space for essays, poetry, stories and everyday observations.">
+<meta name="theme-color" content="#faf8f3">
+<title>The Writing Room — Stories & Ideas</title>
+<style>
+:root{--ink:#25251f;--muted:#74736b;--paper:#faf8f3;--card:#fffdf9;--accent:#7a4938;--line:#e8e1d7;--sage:#dfe5d7;--serif:Georgia,"Times New Roman",serif;--sans:Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.65}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}.wrap{width:min(1120px,92%);margin:auto}
+header{border-bottom:1px solid var(--line);background:rgba(250,248,243,.96)}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0}.brand{font:800 1.02rem var(--sans);letter-spacing:.05em}.brand span{color:var(--accent)}.navlinks{display:flex;gap:24px;font: .9rem var(--sans);color:#555}.navlinks a:hover,.textlink:hover{color:var(--accent)}
+.hero{padding:76px 0 68px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:55px}.eyebrow{text-transform:uppercase;letter-spacing:.18em;font:700 .72rem var(--sans);color:var(--accent)}h1{font-size:clamp(3.1rem,7vw,5.7rem);line-height:.99;letter-spacing:-.055em;font-weight:500;margin:20px 0}.hero p{font-size:1.15rem;color:var(--muted);max-width:550px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-block;padding:13px 20px;background:var(--accent);color:white;border:1px solid var(--accent);border-radius:3px;font:600 .88rem var(--sans);cursor:pointer}.btn.secondary{background:transparent;color:var(--ink);border-color:#cfc5b8}.btn:hover{opacity:.88}
+.art{min-height:350px;background:var(--sage);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:48% 48% 4px 4px}.art:before{content:"";position:absolute;width:210px;height:280px;background:#b8c5ac;border-radius:48% 48% 4px 4px;transform:rotate(-13deg);left:20%;top:18%}.art:after{content:"";position:absolute;width:180px;height:240px;background:#d9bba2;border-radius:48% 48% 4px 4px;transform:rotate(15deg);right:16%;top:27%}.artnote{z-index:1;background:var(--card);padding:25px 28px;max-width:220px;box-shadow:0 12px 35px #5a4d3a20;transform:rotate(-4deg);font-size:1.35rem;line-height:1.2}
+.section{padding-top:16px}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:24px 0}.sectionhead h2{font-size:2.2rem;font-weight:500;letter-spacing:-.04em;margin:0}.sectionhead p{color:var(--muted);margin:0}.searchrow{display:flex;gap:10px;flex-wrap:wrap}.searchrow input{flex:1;min-width:220px;padding:12px 14px;border:1px solid var(--line);background:var(--card);border-radius:3px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 28px}.filter{padding:8px 13px;border:1px solid var(--line);border-radius:30px;background:transparent;font:.82rem var(--sans);cursor:pointer}.filter.active,.filter:hover{background:var(--ink);color:white;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.story{background:var(--card);border:1px solid var(--line);padding:25px;display:flex;flex-direction:column;min-height:285px;transition:transform .2s}.story:hover{transform:translateY(-3px)}.tag{font:700 .7rem var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}.story h3{font-size:1.55rem;line-height:1.15;font-weight:500;margin:15px 0 10px}.story p{color:var(--muted);margin:0 0 22px;font-size:.98rem}.meta{margin-top:auto;color:var(--muted);font:.78rem var(--sans);display:flex;justify-content:space-between;gap:10px}.textlink{border:0;background:none;padding:0;color:var(--accent);font-weight:700;cursor:pointer}.empty{grid-column:1/-1;padding:28px;border:1px dashed var(--line);color:var(--muted);text-align:center}
+.about{margin:90px 0;background:#eeece3;padding:50px;display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}.about h2{font-size:2.5rem;line-height:1.1;font-weight:500;margin:0}.about p{color:#5f5e56}.writebox{margin:70px auto;max-width:760px}.writebox h2{font-size:2.5rem;font-weight:500;margin:0 0 8px}.writebox>p{color:var(--muted)}.note{padding:14px 16px;background:#eeece3;border-left:3px solid var(--accent);font: .9rem var(--sans);color:#555}.promptbox{background:var(--card);border:1px solid var(--line);padding:25px;margin-top:20px}.promptbox h3{font-size:1.4rem;font-weight:500;margin:0 0 8px}.promptbox p{color:var(--muted);margin-top:0}.promptbox textarea{width:100%;min-height:100px;padding:12px;border:1px solid #d9d1c6;background:#fffefb;resize:vertical}.promptbox .actions{margin-top:12px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font:.82rem var(--sans)}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+dialog{width:min(720px,92%);border:1px solid var(--line);padding:clamp(22px,5vw,38px);background:var(--card);color:var(--ink);max-height:85vh;overflow:auto}dialog::backdrop{background:#17171499}dialog h2{font-size:clamp(2rem,5vw,2.7rem);line-height:1.15;font-weight:500;margin:14px 0}dialog .body{white-space:pre-wrap;font-size:1.08rem}.dialogtop{display:flex;justify-content:space-between;align-items:center;gap:12px}.smallbtn{background:transparent;border:1px solid var(--line);padding:8px 12px;cursor:pointer;border-radius:3px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding:52px 0}.art{min-height:265px}.grid{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr;padding:30px;margin:55px 0}}@media(max-width:560px){.grid{grid-template-columns:1fr}.navlinks{gap:12px}.navlinks a:nth-child(2){display:none}.sectionhead{align-items:start;flex-direction:column}.about h2,.writebox h2{font-size:2.1rem}.story{min-height:240px}.hero h1{font-size:3.25rem}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a class="brand" href="#" aria-label="The Writing Room home">THE <span>WRITING</span> ROOM</a>
+<nav class="navlinks" aria-label="Main navigation"><a href="#stories">Stories</a><a href="#about">About</a><a href="#write">Contribute</a></nav>
+</div></header>
+<main>
+<section class="wrap hero">
+<div><div class="eyebrow">A home for curious minds</div><h1>Words have a place <em>here.</em></h1>
+<p>A thoughtful corner of the internet for personal essays, small discoveries, untold stories and ideas worth sharing.</p>
+<div class="actions"><a class="btn" href="#stories">Explore stories</a><a class="btn secondary" href="#write">Share your writing</a></div></div>
+<div class="art" role="img" aria-label="Abstract editorial artwork with layered paper shapes"><div class="artnote">“Write what you feel. The rest will find its way.”</div></div>
+</section>
+<section class="wrap section" id="stories">
+<div class="sectionhead"><div><div class="eyebrow">A collection of voices</div><h2>Stories & thoughts</h2></div><p id="storyCount">Six stories to get you started.</p></div>
+<div class="searchrow"><input id="search" type="search" placeholder="Search stories or authors…" aria-label="Search stories"></div>
+<div class="filters" id="filters" aria-label="Filter stories by category"></div>
+<div class="grid" id="storyGrid" aria-live="polite"></div>
+</section>
+<section class="wrap about" id="about"><div><div class="eyebrow">A little about us</div><h2>Every voice has a story.</h2></div><div><p>The Writing Room is a welcoming space for people who love putting thoughts into words. Whether you write every day or are sharing your first paragraph, there is room for your perspective here.</p><p>Read with curiosity. Write with honesty. Leave a little inspiration for the next person.</p></div></section>
+<section class="wrap writebox" id="write"><div class="eyebrow">Your turn</div><h2>Have something to say?</h2><p>This GitHub Pages edition is a static website. You can draft an idea here and copy it into an email or document to keep working on it.</p>
+<div class="note"><strong>How publishing works:</strong> GitHub Pages serves static files only. This form does not upload or permanently save articles. To accept and store reader submissions, add a backend service or use a hosted writing platform.</div>
+<div class="promptbox">
+<h3>Start a draft</h3><p>Write a title and a few lines, then copy your draft somewhere safe.</p>
+<label for="draftTitle">Draft title</label><input id="draftTitle" type="text" maxlength="140" placeholder="Give your idea a name" style="display:block;width:100%;margin:7px 0 16px;padding:12px;border:1px solid #d9d1c6">
+<label for="draftBody">Your first thoughts</label><textarea id="draftBody" placeholder="Start writing here…"></textarea>
+<div class="actions"><button class="btn" id="copyDraft" type="button">Copy draft</button><button class="btn secondary" id="clearDraft" type="button">Clear</button></div><p id="draftStatus" role="status" aria-live="polite"></p>
+</div>
+</section>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> The Writing Room</span><span>Made for people who love words.</span></div></footer>
+<dialog id="storyDialog" aria-labelledby="dialogTitle"><div class="dialogtop"><span class="eyebrow" id="dialogCategory"></span><button class="smallbtn" id="closeDialog" type="button" aria-label="Close story">Close ×</button></div><h2 id="dialogTitle"></h2><div class="meta"><span id="dialogAuthor"></span><span id="dialogDate"></span></div><hr style="border:0;border-top:1px solid var(--line);margin:24px 0"><div class="body" id="dialogContent"></div></dialog>
+<script>
+const stories = [
+ {id:1,title:"The beauty of beginning",author:"The Editorial Desk",category:"Creative Living",date:"October 12, 2026",excerpt:"Every writer starts somewhere. A thought, a memory, a small observation—and the courage to put it into words.",content:"Every writer starts somewhere. A thought, a memory, a small observation—and the courage to put it into words.\\n\\nWe often wait for the perfect sentence, the quietest room, or a day when we finally feel ready. But beginnings rarely arrive with ceremony. They are usually small: one line in a notebook, a paragraph typed before breakfast, a feeling we decide not to ignore.\\n\\nStart with what you have. Let the first draft be imperfect. The page is not asking you to be brilliant; it is asking you to begin."},
+ {id:2,title:"Things we learn slowly",author:"Mira S.",category:"Personal Essays",date:"October 9, 2026",excerpt:"Some lessons arrive quietly, through ordinary days and conversations we remember long after they end.",content:"Some lessons arrive quietly. They do not always announce themselves as turning points. Sometimes they appear in a conversation on the way home, a mistake we finally stop repeating, or a Sunday afternoon when doing nothing feels enough.\\n\\nGrowing up may be less about collecting answers and more about learning which questions deserve our attention. We learn to apologise, to begin again, and to leave room for the person we are still becoming.\\n\\nPerhaps patience is simply the art of letting understanding catch up with experience."},
+ {id:3,title:"Noticing the little things",author:"Arjun K.",category:"Everyday Notes",date:"October 6, 2026",excerpt:"A walk, a window full of rain, a familiar song: sometimes the smallest details make the best stories.",content:"This morning, the sunlight fell across the kitchen floor in a way I had never noticed before. A cup cooled beside an open book. Somewhere outside, a pressure cooker whistled, and a neighbour called to someone from a balcony.\\n\\nNothing extraordinary happened. That was the extraordinary part.\\n\\nWe spend so much time waiting for life to become memorable that we forget it is already happening. Maybe keeping a journal is not about finding a story every day. Maybe it is about learning to notice the stories that are already there."},
+ {id:4,title:"A small poem for rainy days",author:"Naina",category:"Poetry",date:"October 2, 2026",excerpt:"A few lines about rain, open windows and the gentle permission to slow down.",content:"The rain writes softly\\non the tired windowpane;\\nthe city holds its breath,\\nthen learns to sing again.\\n\\nA cup warms both my hands,\\nthe clouds drift out of view;\\nfor once, I let the day\\nbe nothing I must do."},
+ {id:5,title:"The places that stay with us",author:"Dev P.",category:"Travel",date:"September 28, 2026",excerpt:"A place becomes a memory through its people, its pauses and the details we carry home.",content:"Some places stay with us long after we have left. Not always the famous landmarks or the perfect photographs, but the tea stall where someone remembered our order, the winding lane that smelled of rain, and the stranger who pointed us in the right direction.\\n\\nTravel gives us new scenery, but it also changes the way we look at home. We return with small differences: a new word, a taste we want to recreate, a little more patience for getting lost.\\n\\nPerhaps the best souvenir is a story we did not expect to bring back."},
+ {id:6,title:"Technology should make room for people",author:"Samir R.",category:"Culture & Society",date:"September 21, 2026",excerpt:"A reflection on using digital tools thoughtfully without losing the human details that matter.",content:"Technology is at its best when it gives people more room to do what matters. A useful tool can remove friction, connect distant friends, or make a difficult task feel possible. But convenience is not the same as connection.\\n\\nWe still need to listen carefully, make time for each other, and remember that a person is more than a profile or a notification. The question is not only what a tool can do, but what kind of life it helps us create.\\n\\nProgress should feel human-sized."}
+];
+const allCategory = "All stories";
+const grid = document.getElementById("storyGrid");
+const filterBox = document.getElementById("filters");
+const searchInput = document.getElementById("search");
+let activeCategory = allCategory;
+const categories = [allCategory, ...new Set(stories.map(s => s.category))];
+
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+function renderFilters() {
+  filterBox.replaceChildren();
+  categories.forEach(category => {
+    const button = el("button", "filter" + (category === activeCategory ? " active" : ""), category);
+    button.type = "button";
+    button.setAttribute("aria-pressed", String(category === activeCategory));
+    button.addEventListener("click", () => { activeCategory = category; renderFilters(); renderStories(); });
+    filterBox.append(button);
+  });
+}
+function openStory(story) {
+  document.getElementById("dialogCategory").textContent = story.category;
+  document.getElementById("dialogTitle").textContent = story.title;
+  document.getElementById("dialogAuthor").textContent = "By " + story.author;
+  document.getElementById("dialogDate").textContent = story.date;
+  document.getElementById("dialogContent").textContent = story.content;
+  document.getElementById("storyDialog").showModal();
+}
+function renderStories() {
+  const q = searchInput.value.trim().toLowerCase();
+  const visible = stories.filter(s => (activeCategory === allCategory || s.category === activeCategory) &&
+    [s.title, s.author, s.category, s.excerpt, s.content].some(value => value.toLowerCase().includes(q)));
+  grid.replaceChildren();
+  if (!visible.length) {
+    grid.append(el("div", "empty", "No stories found. Try another search or category."));
+  } else visible.forEach(story => {
+    const article = el("article", "story");
+    article.append(el("div", "tag", story.category));
+    article.append(el("h3", "", story.title));
+    article.append(el("p", "", story.excerpt));
+    const meta = el("div", "meta");
+    meta.append(el("span", "", "By " + story.author), el("span", "", story.date));
+    article.append(meta);
+    const readRow = el("div", "");
+    readRow.style.marginTop = "15px";
+    const read = el("button", "textlink", "Read story ↗");
+    read.type = "button";
+    read.addEventListener("click", () => openStory(story));
+    readRow.append(read);
+    article.append(readRow);
+    grid.append(article);
+  });
+  document.getElementById("storyCount").textContent = `${visible.length} ${visible.length === 1 ? "story" : "stories"} shown`;
+}
+searchInput.addEventListener("input", renderStories);
+document.getElementById("closeDialog").addEventListener("click", () => document.getElementById("storyDialog").close());
+document.getElementById("copyDraft").addEventListener("click", async () => {
+  const title = document.getElementById("draftTitle").value.trim();
+  const body = document.getElementById("draftBody").value.trim();
+  const text = (title ? title + "\n\n" : "") + body;
+  const status = document.getElementById("draftStatus");
+  if (!text.trim()) { status.textContent = "Write a title or some text first."; return; }
+  try {
+    await navigator.clipboard.writeText(text);
+    status.textContent = "Draft copied. Paste it into a document or email to save it.";
+  } catch {
+    status.textContent = "Clipboard access was blocked. Select your text and copy it manually.";
+  }
+});
+document.getElementById("clearDraft").addEventListener("click", () => {
+  document.getElementById("draftTitle").value = "";
+  document.getElementById("draftBody").value = "";
+  document.getElementById("draftStatus").textContent = "Draft cleared from this page.";
+});
+document.getElementById("year").textContent = new Date().getFullYear();
+renderFilters();
+renderStories();
+</script>
+</body>
+</html>
